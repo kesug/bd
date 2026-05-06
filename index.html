@@ -1,99 +1,104 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>CA Nitin Murarka - Index Trading</title>
+<title>Index trading with CA Nitin Murarka (SMC) - Join Telegram</title>
+
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap');
 *{margin:0;padding:0;box-sizing:border-box;}
-body{background:#0d1117;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:40px 16px;font-family:'Inter',sans-serif;}
-.card{background:#161b22;border:1px solid #30363d;border-radius:20px;max-width:420px;width:100%;overflow:hidden;}
-.header-strip{background:#1a3a2a;padding:10px 20px;display:flex;align-items:center;justify-content:center;gap:8px;border-bottom:1px solid #2d5a3d;}
-.live-dot{width:8px;height:8px;border-radius:50%;background:#2ea84f;display:inline-block;animation:pulse 1.5s infinite;}
-@keyframes pulse{0%,100%{opacity:1;}50%{opacity:0.4;}}
-.live-text{color:#2ea84f;font-size:12px;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
-.body{padding:32px 28px;}
-.avatar-wrap{display:flex;justify-content:center;margin-bottom:20px;}
-.avatar{width:90px;height:90px;border-radius:50%;border:3px solid #2ea84f;object-fit:cover;}
-.name{color:#e6edf3;font-size:20px;font-weight:700;text-align:center;margin-bottom:4px;}
-.handle{color:#2ea84f;font-size:13px;text-align:center;margin-bottom:6px;font-weight:500;}
-.role-tag{display:flex;justify-content:center;margin-bottom:22px;}
-.role-pill{background:#1f2d22;color:#57ab5a;font-size:11px;font-weight:600;padding:4px 12px;border-radius:20px;border:1px solid #2d5a3d;letter-spacing:0.5px;}
-.divider{height:1px;background:#21262d;margin-bottom:22px;}
-.markets{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:22px;}
-.mkt{background:#0d1117;border:1px solid #21262d;border-radius:10px;padding:10px 8px;text-align:center;}
-.mkt-name{color:#8b949e;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;margin-bottom:4px;}
-.mkt-val{color:#2ea84f;font-size:12px;font-weight:700;}
-.info-rows{margin-bottom:24px;}
-.info-row{display:flex;align-items:flex-start;gap:10px;padding:9px 0;border-bottom:1px solid #21262d;}
-.info-row:last-child{border-bottom:none;}
-.info-icon{color:#2ea84f;font-size:16px;margin-top:1px;flex-shrink:0;font-weight:700;}
-.info-text{color:#8b949e;font-size:13px;line-height:1.5;}
-.info-text strong{color:#c9d1d9;font-weight:500;}
-.join-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:#2ea84f;color:#fff;font-size:16px;font-weight:700;padding:15px 20px;border-radius:12px;text-decoration:none;margin-bottom:14px;transition:background 0.2s;}
-.join-btn:hover{background:#3dba62;}
-.join-icon{width:22px;height:22px;flex-shrink:0;}
-.footer{text-align:center;color:#484f58;font-size:11px;line-height:1.6;}
-.footer a{color:#2ea84f;text-decoration:none;}
+body{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:30px 16px;font-family:'Poppins',sans-serif;position:relative;overflow:hidden;background:#0a0015;}
+.bg-anim{position:fixed;inset:0;z-index:0;}
+.orb{position:absolute;border-radius:50%;filter:blur(80px);opacity:0.45;}
+.orb1{width:500px;height:500px;background:#6600cc;top:-120px;left:-120px;animation:move1 8s ease-in-out infinite alternate;}
+.orb2{width:450px;height:450px;background:#cc0055;bottom:-100px;right:-100px;animation:move2 9s ease-in-out infinite alternate;}
+.orb3{width:300px;height:300px;background:#0044ff;bottom:100px;left:80px;animation:move3 7s ease-in-out infinite alternate;}
+@keyframes move1{to{transform:translate(60px,80px);}}
+@keyframes move2{to{transform:translate(-60px,-60px);}}
+@keyframes move3{to{transform:translate(40px,-60px);}}
+.stars{position:absolute;inset:0;background-image:radial-gradient(1px 1px at 20% 30%,#fff 0%,transparent 100%),radial-gradient(1px 1px at 60% 15%,#fff 0%,transparent 100%),radial-gradient(1px 1px at 80% 60%,#fff 0%,transparent 100%),radial-gradient(1px 1px at 40% 80%,rgba(255,255,255,0.6) 0%,transparent 100%),radial-gradient(1px 1px at 10% 70%,rgba(255,255,255,0.5) 0%,transparent 100%),radial-gradient(1px 1px at 90% 40%,rgba(255,255,255,0.4) 0%,transparent 100%);}
+.card{position:relative;z-index:1;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.15);border-radius:28px;max-width:400px;width:100%;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,0.5);}
+.card-top{padding:28px 24px 20px;text-align:center;}
+.avatar-ring{width:110px;height:110px;border-radius:50%;padding:3px;background:linear-gradient(135deg,#a855f7,#ec4899,#f97316);margin:0 auto 16px;}
+.avatar-inner{width:100%;height:100%;border-radius:50%;overflow:hidden;border:3px solid #0a0015;}
+.avatar-inner img{width:100%;height:100%;object-fit:cover;}
+.live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,0.2);border:1px solid rgba(239,68,68,0.4);color:#fca5a5;font-size:11px;font-weight:600;padding:3px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:0.5px;}
+.live-dot{width:6px;height:6px;border-radius:50%;background:#ef4444;animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:0.2;}}
+.username{color:#fff;font-size:17px;font-weight:800;margin-bottom:4px;letter-spacing:0.5px;}
+.exp-badge{display:inline-block;background:linear-gradient(135deg,#7c3aed,#db2777);color:#fff;font-size:11px;font-weight:700;padding:4px 14px;border-radius:20px;margin-bottom:16px;}
+.divider{height:1px;background:rgba(255,255,255,0.1);margin:0 24px;}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;padding:14px 16px;}
+.stat{text-align:center;padding:4px;}
+.stat-val{color:#fff;font-size:14px;font-weight:800;}
+.stat-label{color:rgba(255,255,255,0.45);font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.5px;}
+.card-mid{padding:16px 24px 16px;}
+.hindi-text{background:rgba(251,191,36,0.1);border:1px solid rgba(251,191,36,0.25);border-radius:12px;padding:10px 14px;margin-bottom:14px;text-align:center;}
+.hindi-q{color:#fbbf24;font-size:13px;font-weight:700;margin-bottom:2px;}
+.hindi-a{color:#fde68a;font-size:11px;}
+.features{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.feat{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:12px;padding:10px 12px;display:flex;align-items:flex-start;gap:8px;}
+.feat-icon{font-size:16px;flex-shrink:0;}
+.feat-text{color:rgba(255,255,255,0.8);font-size:11px;line-height:1.4;}
+.feat-text strong{color:#fff;display:block;font-size:12px;margin-bottom:1px;}
+.card-bot{padding:0 24px 24px;}
+.tg-btn{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;background:linear-gradient(135deg,#0088cc,#00b4d8);color:#fff;font-size:15px;font-weight:800;padding:15px;border-radius:16px;text-decoration:none;margin-bottom:10px;letter-spacing:0.5px;box-shadow:0 8px 30px rgba(0,136,204,0.4);transition:all 0.3s;}
+.tg-btn:hover{transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,136,204,0.6);}
+.tg-btn svg{width:20px;height:20px;flex-shrink:0;}
+.agency-btn{display:block;text-align:center;background:#d34225;color:#fff;font-size:11px;font-weight:700;padding:6px 14px;border-radius:8px;text-decoration:none;letter-spacing:0.5px;}
+.guarantee{text-align:center;color:#fbbf24;font-size:11px;font-weight:700;margin-top:10px;letter-spacing:0.5px;}
 </style>
 </head>
 <body>
+<div class="bg-anim">
+  <div class="stars"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+</div>
 <div class="card">
-  <div class="header-strip">
-    <span class="live-dot"></span>
-    <span class="live-text">Live Calls Active</span>
-  </div>
-  <div class="body">
-    <div class="avatar-wrap">
-      <img class="avatar" src="nitin.jpg" alt="CA Nitin Murarka"/>
-    </div>
-    <div class="name">CA Nitin Murarka</div>
-    <div class="handle">Index Trading Expert</div>
-    <div class="role-tag">
-      <span class="role-pill">Chartered Accountant &middot; Market Analyst</span>
-    </div>
-    <div class="divider"></div>
-    <div class="markets">
-      <div class="mkt">
-        <div class="mkt-name">Nifty</div>
-        <div class="mkt-val">#Calls</div>
-      </div>
-      <div class="mkt">
-        <div class="mkt-name">BankNifty</div>
-        <div class="mkt-val">#Signals</div>
-      </div>
-      <div class="mkt">
-        <div class="mkt-name">Stocks</div>
-        <div class="mkt-val">#Tips</div>
+  <div class="card-top">
+    <div class="live-badge"><span class="live-dot"></span> LIVE SIGNALS ACTIVE</div>
+    <div class="avatar-ring">
+      <div class="avatar-inner">
+        <img src="nitin.png" alt="Pankaj Bhardwaj"/>
       </div>
     </div>
-     <a class="join-btn" href="https://t.me/+TswBav-wiEE1NTNl" target="_blank">
-      <svg class="join-icon" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-        <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.153.68-.556.848-1.126.527l-3.117-2.297-1.503 1.446c-.166.166-.305.305-.626.305l.222-3.164 5.762-5.205c.251-.222-.055-.345-.386-.123L6.864 13.92l-3.07-.96c-.668-.21-.68-.668.141-.989l11.993-4.624c.556-.202 1.042.136.634 1.901z"/>
-      </svg>
-      Join Free on Telegram
+    <div class="username">CA Nitin Murarka Index Trading Expert</div>
+      <a href="https://t.me/+TswBav-wiEE1NTNl" target="_blank" class="tg-btn">
+      <svg viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248-2.04 9.613c-.153.68-.556.848-1.126.527l-3.117-2.297-1.503 1.446c-.166.166-.305.305-.626.305l.222-3.164 5.762-5.205c.251-.222-.055-.345-.386-.123L6.864 13.92l-3.07-.96c-.668-.21-.68-.668.141-.989l11.993-4.624c.556-.202 1.042.136.634 1.901z"/></svg>
+      JOIN TELEGRAM CHANNEL
     </a>
-    <div class="info-rows">
-      <div class="info-row">
-        <span class="info-icon">&#10003;</span>
-        <span class="info-text"><strong>India's #1</strong> Index Trading Channel — Nifty, BankNifty &amp; Stock calls daily</span>
-      </div>
-      <div class="info-row">
-        <span class="info-icon">&#10003;</span>
-        <span class="info-text"><strong>Real-time alerts</strong> — entry, target &amp; stop-loss for every trade</span>
-      </div>
-      <div class="info-row">
-        <span class="info-icon">&#10003;</span>
-        <span class="info-text"><strong>Zero spam</strong> — only genuine calls. Free to join, no hidden charges</span>
-      </div>
+  </div>
+  <div class="divider"></div>
+  <div class="stats">
+    <div class="stat"><div class="stat-val">10K+</div><div class="stat-label">Members</div></div>
+    <div class="stat" style="border-left:1px solid rgba(255,255,255,0.1);border-right:1px solid rgba(255,255,255,0.1);">
+      <div class="stat-val">95%</div><div class="stat-label">Accuracy</div>
     </div>
-   
-    <div class="footer">
-      No spam &middot; Real signals only &middot; Market hours coverage<br/>
-      Advertised by <a href="https://telegram.me/+glAYUyGU735iNmQ1" target="_blank">APEagency</a>
+    <div class="stat"><div class="stat-val">Daily</div><div class="stat-label">Calls</div></div>
+  </div>
+  <div class="divider"></div>
+  <div class="card-mid">
+    <div class="hindi-text">
+      <div class="hindi-q">क्या आप ट्रेडिंग से पैसे कमाना चाहते हैं?</div>
+      <div class="hindi-a">अगर हां, तो नीचे दिए गए Telegram बटन पर क्लिक करें 🚀</div>
+    </div>
+    <div class="features">
+      <div class="feat"><span class="feat-icon">📊</span><div class="feat-text"><strong>Live Daily Trades</strong>Portfolio se directly</div></div>
+      <div class="feat"><span class="feat-icon">🔥</span><div class="feat-text"><strong>Exclusive Signals</strong>Pro-level strategies</div></div>
+      <div class="feat"><span class="feat-icon">💯</span><div class="feat-text"><strong>High Accuracy</strong>Proven consistency</div></div>
+      <div class="feat"><span class="feat-icon">⚡</span><div class="feat-text"><strong>Instant Alerts</strong>Real-time updates</div></div>
     </div>
   </div>
+  <div class="card-bot">
+   
+    <a href="" target="_blank" class="agency-btn">📱 SIVIADSAGENCY</a>
+<div class="guarantee" style="font-size:12px;color:rgb(49, 49, 49);">
+  💎 We are not an official website; we are created solely for educational purposes. 💎
+</div>  </div>
 </div>
 </body>
 </html>
